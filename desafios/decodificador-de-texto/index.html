@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Decodificador de Textos</title>
+</head>
+<body>
+    <div class="div-pai texto">
+        <div>
+            <img class="logo" alt="ícone da alura" id="alura-icon" src="assets/img/alura_icon.svg">
+        </div>
+        
+        <div class="bloco-entrada">        
+            <textarea placeholder="Digite seu texto aqui!" class="texto" id="texto-digitado" name="texto"></textarea>
+        
+            <label id="sugestao" class="texto">(!)Apenas letras minúsculas e sem acentos</label><br>
+            <div class="botoes">
+                <button class="botao" type="button" onclick="isTextoVazio() ? modoInicial() : criptografar()" id = "criptografar">Criptografar</button> 
+                <button class="botao" type="button" onclick="isTextoVazio() ? modoInicial() : descriptografar()" id = "descriptografar">Descriptografar</button>            
+            </div>
+        </div>
+
+        <div class="bloco-saida border-radius-34" style="text-align: justify; word-wrap: break-word;">        
+            <img id="pessoa-com-lupa" src="assets/img/pessoa-com-lupa.svg">
+        
+            <h2 class="texto-centralizado" id="sem-texto">Nenhuma mensagem encontrada</h2>
+        
+            <p class="texto-centralizado" id="digitar-texto">Digite um texto que você deseja criptografar ou descriptografar</p>
+        
+            <p class="texto-final" id="texto-final"></p>
+        
+            <button class="botao" id="copiar" style="display: none;" onclick="copiarParaAreaDeTransferencia()" type="button">Copiar</button>
+        </div>
+    </div>
+        
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
